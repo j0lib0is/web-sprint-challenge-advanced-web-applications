@@ -15,8 +15,8 @@ In this challenge you will create a login page and request a token from the serv
 ## Project Setup
 
 [x] Run npm install to install your dependencies.
-[ ] Run npm start to run your frontend and backend code automatically.
-[ ] Note your backend code will run automatically when your run npm start. There is no need to seperately run a server.js file and no means to test the server through postman or the browser. Feel free to ignore any messages related to MSW or mock service workers.
+[x] Run npm start to run your frontend and backend code automatically.
+[x] Note your backend code will run automatically when your run npm start. There is no need to seperately run a server.js file and no means to test the server through postman or the browser. Feel free to ignore any messages related to MSW or mock service workers.
 
 ## Project Instructions
 
@@ -86,15 +86,13 @@ In this project, you will demonstrate your mastery of these skills by creating *
 
 > _Complete the requests needed to execute all CRUD functions._
 
--   [ ] Build a `axiosWithAuth` module within the utils folder to create an instance of axios with the authentication header.
+-   [x] Build a `axiosWithAuth` module within the utils folder to create an instance of axios with the authentication header.
 
--   [ ] In `View.js`, complete `handleDelete` so that a http request is made that deletes the article with the included id. After successfully deleting the article on the api, update local state to reflect these changes.
+-   [x] In `View.js`, complete `handleDelete` so that a http request is made that deletes the article with the included id. After successfully deleting the article on the api, update local state to reflect these changes.
 
--   [ ] In `View.js`, complete `handleDelete` so that a http request is made that deletes the article with the included id. After successfully deleting the article on the api, update local state to reflect these changes.
+-   [x] `editId` is passed into the `EditForm` component. In `EditForm.js`, make a http request on mount to get the article with the id `editId`. Save the result in state.
 
--   [ ] `editId` is passed into the `EditForm` component. In `EditForm.js`, make a http request on mount to get the article with the id `editId`. Save the result in state.
-
--   [ ] In `View.js`, complete `handleEdit` so that a http request is made that updates the passed in article. Set the editing state to false when the request is complete. After successfully deleting the article on the api, update local state to reflect these changes.
+-   [x] In `View.js`, complete `handleEdit` so that a http request is made that updates the passed in article. Set the editing state to false when the request is complete. After successfully deleting the article on the api, update local state to reflect these changes.
 
 ### Logout Authentication
 

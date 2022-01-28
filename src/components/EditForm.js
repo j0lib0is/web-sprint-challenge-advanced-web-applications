@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 const initialArticle = {
     id:"",
@@ -11,7 +12,16 @@ const initialArticle = {
 
 const EditForm = (props)=> {
     const [article, setArticle]  = useState(initialArticle);
-    const {handleEdit, handleEditCancel, editId} = props;
+    const {handleEdit, handleEditCancel, editId, setEditing} = props;
+
+    useEffect(() => {
+        axiosWithAuth()
+            .get(`/articles/${editId}`)
+            .then(res => {
+                setArticle(res.data);
+            })
+            .catch(err => console.error(err));
+    }, [editId])
 
     const handleChange = (e)=> {
         setArticle({
@@ -23,6 +33,7 @@ const EditForm = (props)=> {
     const handleSubmit = (e) => {
         e.preventDefault();
         handleEdit(article);
+        setEditing(false);
     }
 
 
@@ -49,7 +60,7 @@ const EditForm = (props)=> {
             <label>Body</label>
             <input value={article.body} id="body" name="body" onChange={handleChange}/>
         </div>
-        <Button id="editButton">Edit Article</Button>
+        <Button onClick={handleEdit(editId)} id="editButton">Edit Article</Button>
         <Button onClick={handleCancel}>Cancel</Button>
     </FormContainer>);
 }
@@ -57,8 +68,8 @@ const EditForm = (props)=> {
 export default EditForm;
 
 //Task List:
-// 1. On mount, make a http request to retrieve the article with the id `editId.`
-// 2. Save result of request to local state.
+// 1. ✅ On mount, make a http request to retrieve the article with the id `editId.`
+// 2. ✅ Save result of request to local state.
 
 const FormContainer = styled.form`
     padding: 1em;

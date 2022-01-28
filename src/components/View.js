@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Article from './Article';
 import EditForm from './EditForm';
 import axiosWithAuth from '../utils/axiosWithAuth';
+import axios from 'axios';
 
 const View = (props) => {
     // State
@@ -26,13 +27,18 @@ const View = (props) => {
         axiosWithAuth()
             .delete(`/articles/${id}`)
             .then(res => {
-                const newArticles = articles.filter(article => article.id !== id);
-                setArticles(newArticles);
+                setArticles(res.data);
             })
             .catch(err => console.error(err));
     }
 
     const handleEdit = (article) => {
+        axiosWithAuth()
+            .put(`/articles/${article.id}`, article)
+            .then(res => {
+                setArticles(res.data);
+            })
+            .catch(err => console.error(err));
     }
 
     const handleEditSelect = (id)=> {
@@ -58,7 +64,7 @@ const View = (props) => {
             </ArticleContainer>
             
             {
-                editing && <EditForm editId={editId} handleEdit={handleEdit} handleEditCancel={handleEditCancel}/>
+                editing && <EditForm editId={editId} handleEdit={handleEdit} handleEditCancel={handleEditCancel} setEditing={setEditing}/>
             }
         </ContentContainer>
     </ComponentContainer>);
@@ -69,8 +75,8 @@ export default View;
 //Task List:
 //1. ✅ Build and import axiosWithAuth module in the utils.
 //2. ✅ When the component mounts, make an http request that adds all articles to state.
-//3. Complete handleDelete method. It should make a request that delete the article with the included id.
-//4. Complete handleEdit method. It should make a request that updates the article that matches the included article param.
+//3. ✅ Complete handleDelete method. It should make a request that delete the article with the included id.
+//4. ✅ Complete handleEdit method. It should make a request that updates the article that matches the included article param.
 
 
 const Container = styled.div`
