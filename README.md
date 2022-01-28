@@ -119,19 +119,23 @@ In this project, you will demonstrate your mastery of these skills by creating *
 
 ## Submission format
 
--   [ ] Submit via Codegrade by commiting and pushing any new changes to **your main branch.**
--   [ ] Check Codegrade before the deadline to compare its results against your local tests.
--   [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
--   [ ] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
+-   [x] Submit via Codegrade by commiting and pushing any new changes to **your main branch.**
+-   [x] Check Codegrade before the deadline to compare its results against your local tests.
+-   [x] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
+-   [x] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers below.
 
 1. Explain what a token is used for.
+   Answer: A token is a unique string that identifies a user as being who they say they are. If their token matches the current one attached to their account in the database, they're authenticated.
 
 2. What steps can you take in your web apps to keep your data secure?
+   Answer: User authentication, data encryption, SSL certificates etc.
 
 3. Describe how web servers work.
+   Answer: Web servers are essentially computers that are optimized to store data. When a web browser makes a request to the server for information, the server returns a package of data which can then be rendered to the user's screen.
 
 4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+   Answer: C.reate R.ead U.pdate D.elete
