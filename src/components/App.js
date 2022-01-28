@@ -17,7 +17,7 @@ const App = () => {
       <RouteContainer>
         <Route path='/login' component={Login} />
         <PrivateRoute path='/view' component={View} />
-        <PrivateRoute path='/view' component={Logout} />
+        <PrivateRoute path='/logout' component={Logout} />
         <Route exact path='/'>
           <Redirect to='/login'/>
         </Route>
