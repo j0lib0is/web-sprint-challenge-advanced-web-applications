@@ -31,7 +31,6 @@ const Login = () => {
                 push('./view');
             })
             .catch(err => {
-                console.error(err.response.data.error)
                 setError({
                     message: err.response.data.error
                 })
